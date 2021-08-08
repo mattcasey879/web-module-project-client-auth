@@ -7,7 +7,6 @@ const initialCredentials = {
 };
 
 const LoginForm = (props) => {
-  const [isLoading, setIsLoading] = useState(false);
   const [credentials, setCredentials] = useState(initialCredentials);
 
   const handleChange = (e) => {
@@ -22,16 +21,14 @@ const LoginForm = (props) => {
     axiosWithAuth()
     .post('/api/login', credentials)
     .then(res => {
-        localStorage.setItem('token', res.data.token)
+        console.log(res.data.token)
+        localStorage.setItem('token', res.data.payload)
         props.history.push('/friends')
     })
     .catch(err => console.log(err))
   }
   return (
     <div className="login-form-container">
-      {isLoading ? (
-        <h2> Loading ...</h2>
-      ) : (
         <form onSubmit={login}>
           <label htmlFor="username">
             <input
@@ -53,7 +50,7 @@ const LoginForm = (props) => {
           </label>
           <button>Log in</button>
         </form>
-      )}
+      
     </div>
   );
 };
