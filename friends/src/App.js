@@ -21,10 +21,10 @@ function App() {
       <header className="App-header">
         <ul>
           <li>
-            <Link to="/login">Login</Link>
+            <Link className='App-link' to="/login">Login</Link>
           </li>
           <li>
-            <Link onClick={logout}>Logout</Link>
+            <Link className='App-link' onClick={logout}>Logout</Link>
           </li>
         </ul>
 

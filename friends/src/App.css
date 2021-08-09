@@ -26,6 +26,32 @@
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  transition: .4s;
+}
+.App-link:hover {
+  color:white;
+  transition: .4s;
+}
+button {
+  background-color: transparent;
+  border: none;
+  color: #61dafb;
+  transition: .4s;
+}
+button:hover{
+  cursor: pointer;
+  color:white;
+  transition: .4s;
+}
+input {
+  display: flex;
+  align-items: center;
+  margin: 5% 0;
+}
+
+ul li {
+  list-style-type: none;
 }
 
 @keyframes App-logo-spin {
